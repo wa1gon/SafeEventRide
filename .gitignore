@@ -1,0 +1,4 @@
+server/obj/
+server/bin/
+server/.vs/
+Angular-Client/dist/
