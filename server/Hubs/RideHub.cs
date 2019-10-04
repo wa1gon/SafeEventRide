@@ -16,6 +16,18 @@ namespace SignalRHub
     {
       Console.WriteLine(bib);
       var id = Context.ConnectionId;
+      switch(bib.UserType.ToLower())
+      {
+        case "r":
+          Groups.AddToGroupAsync(id, "rider");
+          break;
+        case "s":
+          Groups.AddToGroupAsync(id, "sag");
+          break;
+        case "n":
+          Groups.AddToGroupAsync(id, "net");
+          break;
+      }
       Console.WriteLine(id);
     }
   }
