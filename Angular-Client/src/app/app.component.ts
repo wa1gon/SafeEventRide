@@ -1,3 +1,4 @@
+import { UserDTO } from './DTO/userDTO';
 import { SignalrService } from './services/SignalR/signalr.service';
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
@@ -15,7 +16,7 @@ export class AppComponent implements OnInit {
   constructor(private sigR: SignalrService) { }
 
   ngOnInit(): void {
-    this.sigR.login('73');
+    // this.sigR.login('73');
     // const connection = new signalR.HubConnectionBuilder()
     //   .configureLogging(signalR.LogLevel.Information)
     //   .withUrl('http://localhost:3773/notify')
@@ -34,6 +35,11 @@ export class AppComponent implements OnInit {
   }
   login() {
     console.log('in login event');
-    this.sigR.login('73');
+    const user = new UserDTO();
+    user.UserId = '73';
+    user.UserType = 'r';
+    user.EventId = 'Bentonville2020';
+    user.Phone = '603-801-1114';
+    this.sigR.login(user);
   }
 }

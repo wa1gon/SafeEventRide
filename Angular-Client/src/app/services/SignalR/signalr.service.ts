@@ -1,3 +1,4 @@
+import { UserDTO } from './../../DTO/userDTO';
 import { Injectable } from '@angular/core';
 
 import * as signalR from '@aspnet/signalr';
@@ -25,9 +26,9 @@ export class SignalrService {
   private broadcastMessage = (type: string, payload: string) => {
     console.log(`type: ${type} - payload: ${payload}`);
   }
-  public login(bibNum: string): void {
+  public login(user: UserDTO): void {
     console.log('login rider');
-    this.connection.invoke('LoginInRider', bibNum).catch((err) => {
+    this.connection.invoke('LoginInRider', user).catch((err) => {
       return console.error(err.toString);
     });
   }

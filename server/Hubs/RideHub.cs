@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.SignalR;
+using SignalRHub.DTO;
 using System;
 using System.Threading.Tasks;
 
@@ -11,7 +12,7 @@ namespace SignalRHub
 
 
     }
-    public void LoginInRider(string bib)
+    public void LoginInRider(UserDTO bib)
     {
       Console.WriteLine(bib);
       var id = Context.ConnectionId;
