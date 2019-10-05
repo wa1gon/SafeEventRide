@@ -1,10 +1,13 @@
+
 import { UserDTO } from './DTO/userDTO';
 import { Location } from './DTO/Location';
 import { SignalrService } from './services/SignalR/signalr.service';
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
 
+
 import * as signalR from '@aspnet/signalr';
+import { UserService } from './services/user-service/user.service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +17,7 @@ import * as signalR from '@aspnet/signalr';
 })
 export class AppComponent implements OnInit {
 
-  constructor(private sigR: SignalrService) { }
+  constructor(private sigR: SignalrService, private userService: UserService) { }
 
   ngOnInit(): void {
     // this.sigR.login('73');

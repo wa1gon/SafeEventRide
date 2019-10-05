@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { appRoutes } from './app.routes';
 import { LoginComponent } from './Components/Login/Login.component';
+import { UserService } from './services/user-service/user.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,9 @@ import { LoginComponent } from './Components/Login/Login.component';
     MaterialModule,
     RouterModule.forRoot(appRoutes),
   ],
-  providers: [],
+  providers: [
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
