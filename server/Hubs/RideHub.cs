@@ -14,7 +14,6 @@ namespace SignalRHub
     }
     public void LoginInRider(UserDTO bib)
     {
-      Console.WriteLine(bib);
       var id = Context.ConnectionId;
       switch(bib.UserType.ToLower())
       {
@@ -28,7 +27,10 @@ namespace SignalRHub
           Groups.AddToGroupAsync(id, "net");
           break;
       }
-      Console.WriteLine(id);
+    }
+    public void Location(Location loc)
+    {
+
     }
   }
 }

@@ -1,3 +1,4 @@
+import { Location } from './../../DTO/Location';
 import { UserDTO } from './../../DTO/userDTO';
 import { Injectable } from '@angular/core';
 
@@ -29,6 +30,13 @@ export class SignalrService {
   public login(user: UserDTO): void {
     console.log('login rider');
     this.connection.invoke('LoginInRider', user).catch((err) => {
+      return console.error(err.toString);
+    });
+  }
+
+  public sendLocation(loc: Location): void {
+    console.log('sending location');
+    this.connection.invoke('Location', loc).catch((err) => {
       return console.error(err.toString);
     });
   }

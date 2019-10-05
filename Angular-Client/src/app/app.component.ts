@@ -1,4 +1,5 @@
 import { UserDTO } from './DTO/userDTO';
+import { Location } from './DTO/Location';
 import { SignalrService } from './services/SignalR/signalr.service';
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
@@ -41,5 +42,12 @@ export class AppComponent implements OnInit {
     user.EventId = 'Bentonville2020';
     user.Phone = '603-801-1114';
     this.sigR.login(user);
+  }
+  public sendLoc(): void {
+    const loc = new Location();
+    loc.Lat = 38.533;
+    loc.Long = -93.3883;
+    loc.LocDTG = new Date();
+    this.sigR.sendLocation(loc);
   }
 }
