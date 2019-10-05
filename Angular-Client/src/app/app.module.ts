@@ -1,19 +1,29 @@
+import { WelcomeComponent } from './Components/Welcome/Welcome.component';
 import { BrowserModule } from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-
+import { MaterialModule } from './material.module';
 import { ToastModule } from 'primeng/toast';
-
+import { Routes, RouterModule, CanActivate } from '@angular/router';
 import { AppComponent } from './app.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { appRoutes } from './app.routes';
+import { LoginComponent } from './Components/Login/Login.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    ToastModule
+    ToastModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MaterialModule,
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [],
   bootstrap: [AppComponent]
