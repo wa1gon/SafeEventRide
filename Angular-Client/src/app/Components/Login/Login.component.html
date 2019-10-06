@@ -1,9 +1,8 @@
-
 <div class="wrapper">
   <mat-card class="main" *ngIf="!curUser.isLoggedIn">
     <mat-card-header class="header">
       <mat-card-title>
-        <h3>Shows Login Screen</h3>
+        <h3>Save Event Ride</h3>
       </mat-card-title>
     </mat-card-header>
 
@@ -19,28 +18,8 @@
         </mat-form-field>
       </div>
 
-      <div class="host">
-        <mat-form-field >
-          <input matInput placeholder="Host" [(ngModel)]="loginHost">
-        </mat-form-field>
-
-        <mat-form-field>
-          <input matInput placeholder="Port" [(ngModel)]="loginPort">
-        </mat-form-field>
-        <mat-error *ngIf="loginError">{{loginMsg}}</mat-error>
-      </div>
-
-      <mat-checkbox class="cb" [(ngModel)]="remember" [indeterminate]="indeterminate"  [disabled]="disabled">
-          <!-- <mat-checkbox class="cb" [(ngModel)]="remember" [indeterminate]="indeterminate" [align]="align" [disabled]="disabled"> -->
-        Save Login Information
-      </mat-checkbox>
-      <!-- <mat-checkbox class="dev" [(ngModel)]="dev" [indeterminate]="indeterminate" [align]="align" ></mat-checkbox> -->
-      <mat-checkbox class="dev" [(ngModel)]="dev" [indeterminate]="indeterminate"  >
-        Dev Database
-      </mat-checkbox>
-
       <div class="actions but-wrap">
-        <button class="clr-but" mat-raised-button color="warn" (click)="loginClick()">Clear Saved Information</button>
+        <button class="clr-but" mat-raised-button color="warn" (click)="loginClick()">Clear</button>
         <button class="login-but" mat-raised-button color="primary" (click)="loginClick()">Login</button>
       </div>
 
