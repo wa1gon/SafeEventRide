@@ -14,6 +14,7 @@ namespace SignalRHub
     }
     public void LoginInRider(UserDTO bib)
     {
+      Console.WriteLine($"{bib.ToString()}");
       var id = Context.ConnectionId;
       switch(bib.UserType.ToLower())
       {

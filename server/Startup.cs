@@ -46,12 +46,7 @@ namespace SignalR_Hub
       {
         endpoints.MapHub<RideHub>("/ride");
       });
-      //app.UseSignalR(routes =>
-      //{
-      //  routes.MapHub<RideHub>("/ride");
-      //});
 
-      //app.UseMvc();
     }
   }
 }

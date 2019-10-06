@@ -8,22 +8,26 @@
 
     <mat-card-content class="login-wrap">
 
-      <div class="account">
+      <div class="account" [formGroup]="loginGroup">
         <mat-form-field>
-          <input matInput placeholder="User Name" [(ngModel)]="loginUser">
+          <input matInput placeholder="User Name" formControlName="userId">
         </mat-form-field>
 
         <mat-form-field>
-          <input matInput placeholder="Password" [(ngModel)]="loginPassword">
+          <input matInput placeholder="Password" formControlName="password">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Phone" formControlName="phone">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Event Id" formControlName="eventId">
         </mat-form-field>
       </div>
-
       <div class="actions but-wrap">
         <button class="clr-but" mat-raised-button color="warn" (click)="loginClick()">Clear</button>
         <button class="login-but" mat-raised-button color="primary" (click)="loginClick()">Login</button>
       </div>
 
     </mat-card-content>
-
   </mat-card>
 </div>

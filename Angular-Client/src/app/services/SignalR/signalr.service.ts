@@ -2,7 +2,7 @@ import { Location } from './../../DTO/Location';
 import { UserDTO } from './../../DTO/userDTO';
 import { Injectable } from '@angular/core';
 
-import * as signalR from '@aspnet/signalr';
+import * as signalR from '@microsoft/signalr';
 
 @Injectable({
   providedIn: 'root'

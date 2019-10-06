@@ -1,8 +1,9 @@
 
 
 export class UserDTO {
-  public UserId: string;
-  public EventId: string;
-  public Phone: string;
-  public UserType: string;
+  public userId: string;
+  public eventId: string;
+  public phone: string;
+  public password: string;
+  public userType: string;
 }
