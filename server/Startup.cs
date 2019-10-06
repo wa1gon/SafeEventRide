@@ -34,18 +34,22 @@ namespace SignalR_Hub
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
-      if (env.IsDevelopment())
-      {
-        app.UseDeveloperExceptionPage();
-      }
-
+      //if (env.IsDevelopment())
+      //{
+      //  app.UseDeveloperExceptionPage();
+      //}
+      app.UseRouting();
       app.UseCors("CorsPolicy");
-      app.UseSignalR(routes =>
+      app.UseEndpoints(endpoints =>
       {
-        routes.MapHub<RideHub>("/ride");
+        endpoints.MapHub<RideHub>("/ride");
       });
+      //app.UseSignalR(routes =>
+      //{
+      //  routes.MapHub<RideHub>("/ride");
+      //});
 
       //app.UseMvc();
     }
