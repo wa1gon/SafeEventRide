@@ -1,0 +1,61 @@
+.card {
+  //   margin: 150px;
+}
+h3 {
+  color: red;
+}
+.header {
+  grid-area: header;
+}
+.account {
+  grid-area: account;
+}
+.host {
+  grid-area: host;
+}
+.actions {
+  grid-area: actions;
+}
+.cb {
+  grid-area: cb;
+}
+.dev {
+  grid-area: dev;
+}
+.clr-but {
+  grid-area: clr-but;
+}
+.login-but {
+  grid-area: login-but;
+}
+.but-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  grid-gap: 20px;
+  grid-template-areas: "clr-but login-but";
+}
+.login-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  grid-template-areas:
+    "header"
+    "account"
+    "host"
+    "cb"
+    "actions";
+}
+.login {
+  grid-area: login;
+}
+.main {
+  grid-area: main;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 2fr;
+  grid-template-areas:
+    ".. main ..";
+}
