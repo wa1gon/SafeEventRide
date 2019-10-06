@@ -14,6 +14,7 @@ export class SignalrService {
     this.connection = new signalR.HubConnectionBuilder()
       .configureLogging(signalR.LogLevel.Information)
       .withUrl('http://localhost:3773/ride')
+      .withAutomaticReconnect()
       .build();
 
     this.connection.start().then(() => {
