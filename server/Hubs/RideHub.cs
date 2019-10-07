@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.SignalR;
 using SignalRHub.DTO;
+using SignalRHub.Services;
 using System;
 using System.Threading.Tasks;
 
@@ -7,6 +8,12 @@ namespace SignalRHub
 {
   public class RideHub : Hub<ITypedHubClient>
   {
+    public DateTime dtg = DateTime.Now;
+    public RideHub(IDatabase db)
+    {
+      Console.WriteLine(dtg);
+
+    }
     public void UpdateLocation(string locationString)
     {
 

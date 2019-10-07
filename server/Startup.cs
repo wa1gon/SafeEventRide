@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SignalRHub;
+using SignalRHub.Services;
 
 namespace SignalR_Hub
 {
@@ -29,6 +30,7 @@ namespace SignalR_Hub
       }));
 
       services.AddSignalR();
+      services.AddSingleton(typeof(IDatabase), typeof(InMemoryDB));
 
       services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
     }
