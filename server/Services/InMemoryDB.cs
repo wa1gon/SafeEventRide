@@ -8,29 +8,39 @@ namespace SignalRHub.Services
 {
   public class InMemoryDB : IDatabase
   {
-    public void AddUser(User user)
+    private List<User> Users = new List<User>();
+    public InMemoryDB()
     {
-      throw new NotImplementedException();
+
+
+
     }
 
-    public void DeleteUserByBib(int bib)
+    public void AddUser(User user)
     {
-      throw new NotImplementedException();
+      Users.Add(user);
+    }
+
+    public void DeleteUserByBib(string bib)
+    {
+      Users.RemoveAll(item => item.UserId == bib);
     }
 
     public void DeleteUserById(string id)
     {
-      throw new NotImplementedException();
+      Users.RemoveAll(item => item.Id == id);
     }
 
-    public User GetUserByBib(int bibNum)
+    public User GetUserByBib(string bibNum)
     {
-      throw new NotImplementedException();
+      var rc = Users.Find(item => item.Id == bibNum);
+      return rc;
     }
 
     public User GetUserById(string id)
     {
-      throw new NotImplementedException();
+      var rc = Users.Find(item => item.UserId == id);
+      return rc;
     }
 
     public void UpdateUser(User user)

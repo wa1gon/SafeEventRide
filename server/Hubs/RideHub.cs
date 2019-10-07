@@ -8,10 +8,10 @@ namespace SignalRHub
 {
   public class RideHub : Hub<ITypedHubClient>
   {
-    public DateTime dtg = DateTime.Now;
+    private IDatabase myDb;
     public RideHub(IDatabase db)
     {
-      Console.WriteLine(dtg);
+      myDb = db;
 
     }
     public void UpdateLocation(string locationString)
