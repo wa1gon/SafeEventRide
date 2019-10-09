@@ -1,3 +1,4 @@
+import { Router, RouterLink } from '@angular/router';
 import { LocationDTO } from '../../DTO/LocationDTO';
 import { UserDTO } from './../../DTO/userDTO';
 import { Injectable } from '@angular/core';
@@ -12,7 +13,7 @@ export class SignalrService {
 
   private connection: any;
   private loginStatus: LoginStatusDTO;
-  constructor() {
+  constructor(private router: Router) {
     this.connection = new signalR.HubConnectionBuilder()
       .configureLogging(signalR.LogLevel.Information)
       .withUrl('http://localhost:3773/ride')
@@ -31,6 +32,7 @@ export class SignalrService {
 
   private loginResponse = (status: LoginStatusDTO) => {
     this.loginStatus = status;
+    this.router.navigate(['/home']);
     console.log(status);
   }
   private broadcastMessage = (type: string, payload: string) => {

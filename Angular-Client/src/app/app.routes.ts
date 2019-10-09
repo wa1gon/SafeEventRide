@@ -6,7 +6,6 @@ export const appRoutes: Routes = [
         path: '', component: LoginComponent
     },
     {
-        path: 'home',
-        component: WelcomeComponent
+        path: 'home', component: WelcomeComponent
     }];
 
