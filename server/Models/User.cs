@@ -13,5 +13,12 @@ namespace SignalRHub.Models
     public string Phone { get; set; }
     public string UserType { get; set; }
     public string Password { get; set; }
+    public string LoginStatus { get; set; }
+    
+
+    public User()
+    {
+      LoginStatus = "none";
+    }
   }
 }

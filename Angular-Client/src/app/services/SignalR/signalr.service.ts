@@ -1,8 +1,9 @@
-import { Location } from './../../DTO/Location';
+import { LocationDTO } from '../../DTO/LocationDTO';
 import { UserDTO } from './../../DTO/userDTO';
 import { Injectable } from '@angular/core';
 
 import * as signalR from '@microsoft/signalr';
+import { LoginStatusDTO } from 'src/app/DTO/loginStatusDTO';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,7 @@ import * as signalR from '@microsoft/signalr';
 export class SignalrService {
 
   private connection: any;
+  private loginStatus: LoginStatusDTO;
   constructor() {
     this.connection = new signalR.HubConnectionBuilder()
       .configureLogging(signalR.LogLevel.Information)
@@ -24,6 +26,12 @@ export class SignalrService {
     });
 
     this.connection.on('BroadcastMessage', this.broadcastMessage);
+    this.connection.on('LoginResponse', this.loginResponse);
+  }
+
+  private loginResponse = (status: LoginStatusDTO) => {
+    this.loginStatus = status;
+    console.log(status);
   }
   private broadcastMessage = (type: string, payload: string) => {
     console.log(`type: ${type} - payload: ${payload}`);
@@ -35,7 +43,7 @@ export class SignalrService {
     });
   }
 
-  public sendLocation(loc: Location): void {
+  public sendLocation(loc: LocationDTO): void {
     console.log('sending location');
     this.connection.invoke('Location', loc).catch((err) => {
       return console.error(err.toString);

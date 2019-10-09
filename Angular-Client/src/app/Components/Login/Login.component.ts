@@ -30,10 +30,10 @@ export class LoginComponent implements OnInit {
   }
   private buildForm(): FormGroup {
     const loginGroup = this.fb.group({
-      userId: ['1111'],
-      password: ['2222'],
+      userId: ['101'],
+      password: ['1111'],
       phone: ['603-801-1114'],
-      eventId: ['tdc2020']
+      eventId: ['EventBV2012']
     });
     return loginGroup;
   }

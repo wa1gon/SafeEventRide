@@ -1,6 +1,6 @@
 
 import { UserDTO } from './DTO/userDTO';
-import { Location } from './DTO/Location';
+import { LocationDTO } from './DTO/LocationDTO';
 import { SignalrService } from './services/SignalR/signalr.service';
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';

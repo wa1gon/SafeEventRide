@@ -9,11 +9,12 @@ namespace SignalRHub.Services
   public interface IDatabase
   {
 
-    User GetUserByBib(string bibNum);
+    User GetUserByUserId(string bibNum);
     User GetUserById(string id);
     void AddUser(User user);
     void DeleteUserById(string id);
-    void DeleteUserByBib(string bib);
+    void DeleteUserByUserId(string bib);
     void UpdateUser(User user);
+    void UpdateSignalRId(string userId, string id);
   }
 }

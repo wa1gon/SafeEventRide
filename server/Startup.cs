@@ -32,6 +32,7 @@ namespace SignalR_Hub
       services.AddSignalR();
       //services.AddSingleton(typeof(IDatabase), typeof(InMemoryDB));
       services.AddSingleton<IDatabase, InMemoryDB>();
+      services.AddSingleton<IAuth, DatabaseAuth>();
 
       services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
     }
