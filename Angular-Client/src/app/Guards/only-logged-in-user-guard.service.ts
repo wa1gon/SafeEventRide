@@ -13,7 +13,7 @@ export class OnlyLoggedInUserGuardService implements CanActivate {
     if (this.userService.isLoggedIn) {
       return true;
     } else {
-      this.router.navigate(['/login']);
+      this.router.navigate(['/']);
       return false;
     }
   }

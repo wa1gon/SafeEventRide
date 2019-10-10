@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GeoLocationService } from 'src/app/services/GeoLocation/geo-location.service';
 
 @Component({
   selector: 'app-Welcome',
@@ -6,29 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./Welcome.component.scss']
 })
 export class WelcomeComponent implements OnInit {
-  public lat: number = 0;
-  public long: number
+
   public interval: any;
-  constructor() { }
+  constructor(private geoLoc: GeoLocationService) { }
 
   ngOnInit() {
-    this.startTimer();
-  }
+    this.geoLoc.getLocation();
 
-  private startTimer(): void {
-    this.interval = setInterval(() => {
-      this.getLocation();
-    }, 1000);
   }
-  private getLocation(): void {
-    if ('geolocation' in navigator) {
-      let watchID = navigator.geolocation.watchPosition((position) => {
-        this.lat = position.coords.latitude;
-        this.long = position.coords.longitude;
-      });
-    } else {
-      console.log('Location no available');
-    }
-  }
-
 }

@@ -9,5 +9,7 @@ namespace SignalRHub.Models
   {
     public string Status { get; set; }
     public string Reason { get; set; }
+    public string SessionId { get; set; }
+    public DateTime SessionTimeout { get; set; }
   }
 }

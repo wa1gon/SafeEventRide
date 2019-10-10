@@ -42,6 +42,11 @@ namespace SignalRHub.Services
       var rc = Users.Find(item => item.Id == id);
       return rc;
     }
+    public User GetUserBySessionId(string id)
+    {
+      var rc = Users.Find(item => item.SessionId == id);
+      return rc;
+    }
 
     public void UpdateUser(User user)
     {

@@ -1,3 +1,4 @@
+import { OnlyLoggedInUserGuardService } from './Guards/only-logged-in-user-guard.service';
 import { WelcomeComponent } from './Components/Welcome/Welcome.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -27,7 +28,8 @@ import { UserService } from './services/user-service/user.service';
     RouterModule.forRoot(appRoutes),
   ],
   providers: [
-    UserService
+    UserService,
+    OnlyLoggedInUserGuardService
   ],
   bootstrap: [AppComponent]
 })

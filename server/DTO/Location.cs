@@ -10,5 +10,6 @@ namespace SignalRHub.DTO
     public decimal Lat { get; set; }
     public decimal Long { get; set; }
     public DateTime LocDTG { get; set; }
+    public String SessionId { get; set; }
   }
 }

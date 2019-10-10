@@ -14,7 +14,8 @@ namespace SignalRHub.Models
     public string UserType { get; set; }
     public string Password { get; set; }
     public string LoginStatus { get; set; }
-    
+    public string SessionId { get; set; }
+    public DateTime SessionTimeout { get; set; }
 
     public User()
     {

@@ -11,6 +11,7 @@ namespace SignalRHub
   {
     private IDatabase myDb;
     private IAuth myAuth;
+    private static int counter = 0;
     public RideHub(IDatabase db, IAuth auth)
     {
       myDb = db;
@@ -30,13 +31,15 @@ namespace SignalRHub
       Console.WriteLine($"auth is: {isAuth}");
       if (!isAuth)
       {
-
         return;
       }
       myDb.UpdateSignalRId(user.UserId, id);
       var status = new LoginStatusDTO();
       status.Status = "OK";
       status.Reason = "Success";
+      status.SessionId = user.SessionId;
+      status.SessionTimeout = user.SessionTimeout;
+
       Clients.Client(id).SendAsync("LoginResponse", status);
       switch(user.UserType.ToLower())
       {
@@ -53,6 +56,10 @@ namespace SignalRHub
     }
     public void Location(Location loc)
     {
+      var user = myDb.GetUserBySessionId(loc.SessionId);
+      if (user == null) return;
+      counter++;
+      Console.WriteLine($"loc: {loc.Lat} {loc.Long} {counter} {user.SessionId}");
 
     }
   }

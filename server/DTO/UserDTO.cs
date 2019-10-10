@@ -12,5 +12,7 @@ namespace SignalRHub.DTO
     public string Phone { get; set; }
     public string UserType { get; set; }
     public string Password { get; set; }
+    public string SessionId { get; set; }
+    public DateTime SessionTimeout { get; set; }
   }
 }

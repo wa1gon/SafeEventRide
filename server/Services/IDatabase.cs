@@ -11,6 +11,7 @@ namespace SignalRHub.Services
 
     User GetUserByUserId(string bibNum);
     User GetUserById(string id);
+    User GetUserBySessionId(string guid);
     void AddUser(User user);
     void DeleteUserById(string id);
     void DeleteUserByUserId(string bib);

@@ -1,5 +1,6 @@
 export class LocationDTO {
-    public Lat: number;
-    public Long: number;
-    public LocDTG: Date | string;
+    public lat: number;
+    public long: number;
+    public locDTG: Date | string;
+    public sessionId: string;
 }
