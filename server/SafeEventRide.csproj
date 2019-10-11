@@ -3,8 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
-    <RootNamespace>SignalRHub</RootNamespace>
-    <AssemblyName>SignalRHub</AssemblyName>
+    <RootNamespace>SafeEventRide</RootNamespace>
+    <AssemblyName>SafeEventRide</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
