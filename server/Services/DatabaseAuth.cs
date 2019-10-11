@@ -19,8 +19,14 @@ namespace SignalRHub.Services
       var storedUser = myDb.GetUserByUserId(user.UserId);
       if (storedUser.Password == user.Password)
       {
-        storedUser.SessionId = Guid.NewGuid().ToString();
-        user.SessionId = storedUser.SessionId;
+        if (String.IsNullOrEmpty(storedUser.SessionId))
+        {
+          storedUser.SessionId = Guid.NewGuid().ToString();
+          user.SessionId = storedUser.SessionId;
+        } else
+        {
+          user.SessionId = storedUser.SessionId;
+        }
 
         user.SessionTimeout = DateTime.Now.AddDays(1.0);
         storedUser.SessionTimeout = user.SessionTimeout;
